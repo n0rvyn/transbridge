@@ -4,7 +4,9 @@ Garminops 是 Transbridge marketplace 下的桌面本地开发插件。151 项�
 
 ## 安装开发依赖
 
-需要 Python 3.12 或更高版本及 `uv`。在项目根目录执行：
+首次克隆、生成包、注册 marketplace 与安装插件的顺序见根目录 README.md 中的“首次本地安装”。生成包不在 Git 中，必须先打包再安装。
+
+需要 Python 3.12 或更高版本及 `uv`。Intel macOS 的锁定 `cryptography 50.0.2` 没有对应 wheel，需 Rust ≥1.83、Xcode 命令行工具与 OpenSSL 3 进行源码构建；必要时按 [上游安装说明](https://cryptography.io/en/latest/installation/) 设置 `OPENSSL_DIR`。在项目根目录执行：
 
 ```sh
 uv sync --project garminops --extra test --locked
