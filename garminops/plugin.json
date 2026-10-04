@@ -1,0 +1,22 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "garminops",
+  "version": "0.1.0-dev.35",
+  "description": "Garmin development connector: read data, manage workouts and calendar plans, and update current heart-rate, power and display-unit settings. Logged data is immutable.",
+  "author": {
+    "name": "Transbridge"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Garminops",
+        "shortDescription": "Garmin Connect tools",
+        "longDescription": "Desktop local development plugin with 125 read adapters, Garmin account identity/status, and 24 named plan/settings writes. International MCP roundtrips verified for documented capabilities. One active region follows successful local login. FTHR null restoration is accepted known issue KI-001; further attempts are stopped. China business validation and Connect+ features are deferred TODOs. Other ordinary capabilities remain in development.",
+        "developerName": "Transbridge",
+        "category": "Productivity",
+        "defaultPrompt": "Check my Garmin connector status before reading my data. Never change logged data."
+      }
+    }
+  },
+  "license": "MIT"
+}

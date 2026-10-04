@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "garminops"
+version = "0.1.0.dev0"
+description = "Garmin connector development runtime with immutable logged data"
+requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = ["garminconnect==0.3.17", "curl-cffi>=0.13", "mcp>=1.26,<2", "pydantic>=2.11,<3"]
+
+[project.optional-dependencies]
+test = ["pytest>=8", "pytest-asyncio>=1"]
+
+[project.scripts]
+garminops = "garminops.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/garminops"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

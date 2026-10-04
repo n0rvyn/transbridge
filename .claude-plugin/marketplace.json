@@ -1,0 +1,20 @@
+{
+  "name": "transbridge",
+  "interface": {
+    "displayName": "Transbridge"
+  },
+  "plugins": [
+    {
+      "name": "garminops",
+      "source": {
+        "source": "local",
+        "path": "./dist/garminops"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

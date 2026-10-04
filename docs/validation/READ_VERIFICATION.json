@@ -1,0 +1,508 @@
+{
+  "verified_on": "2026-10-02",
+  "region": "com",
+  "plugin_version": "0.1.0-dev.5 baseline; get_courses dev.9; get_course expected 404 dev.12; get_userprofile_settings validated dev.15; get_effective_goals dev.16; get_calendar_note dev.19; get_calendar_event expected 404 dev.20; get_calendar_event populated dev.21; gear v2 readers dev.22; populated gear detail dev.23; explicit ACTIVE/RETIRED gear inventory dev.25; default choices empty dev.26 and populated dev.27; explicit gear activities/stats and scheduled detail dev.28",
+  "transport": "Installed plugin MCP stdio",
+  "scope": "Response compatibility using authorized test account samples; not proof of complete pagination, all formats or all populated fields.",
+  "counts": {
+    "registered": 125,
+    "success": 117,
+    "error": 2,
+    "not_exercised": 6
+  },
+  "privacy": "Public compatibility summary only; per-account observations and payload evidence remain in ignored local logs.",
+  "methods": {
+    "count_activities": {
+      "status": "success",
+      "type": "int"
+    },
+    "download_activity": {
+      "status": "success",
+      "type": "dict"
+    },
+    "download_health_snapshot": {
+      "status": "error"
+    },
+    "download_workout": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_activities": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_activities_by_date": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_activities_fordate": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_activity": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_activity_details": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_activity_exercise_sets": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_activity_gear": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_activity_hr_in_timezones": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_activity_power_in_timezones": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_activity_split_summaries": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_activity_splits": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_activity_typed_splits": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_activity_types": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_activity_weather": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_adaptive_training_plan_by_id": {
+      "status": "not_exercised"
+    },
+    "get_adhoc_challenges": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_all_day_events": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_all_day_stress": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_available_badge_challenges": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_available_badges": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_badge_challenges": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_blood_pressure": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_body_battery": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_body_battery_events": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_body_composition": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_calories_daily": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_cycling_ftp": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_daily_steps": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_daily_training_status": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_daily_weigh_ins": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_device_alarms": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_device_last_used": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_device_settings": {
+      "status": "not_exercised"
+    },
+    "get_device_solar_data": {
+      "status": "not_exercised"
+    },
+    "get_devices": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_earned_badges": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_endurance_score": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_fitnessage_data": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_floors": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_full_name": {
+      "status": "success",
+      "type": "str"
+    },
+    "get_functional_threshold_power_range": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_gear": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_gear_activities": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_gear_defaults": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_gear_stats": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_goals": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_golf_club_stats": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_golf_scorecard": {
+      "status": "not_exercised"
+    },
+    "get_golf_shot_data": {
+      "status": "not_exercised"
+    },
+    "get_golf_summary": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_golf_user_stats": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_heart_rate_zones": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_heart_rates": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_hill_score": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_hrv_data": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_hrv_data_range": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_hydration_data": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_in_progress_badges": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_inprogress_virtual_challenges": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_intensity_minutes_data": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_lactate_threshold": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_last_activity": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_lifestyle_logging_data": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_max_metrics": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_max_metrics_range": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_menstrual_calendar_data": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_menstrual_cycle_summary": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_menstrual_data_for_date": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_menstrual_last_confirmed": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_menstrual_reports": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_morning_training_readiness": {
+      "status": "success",
+      "type": "NoneType"
+    },
+    "get_next_scheduled_workout": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_non_completed_badge_challenges": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_nutrition_daily_food_log": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_nutrition_daily_meals": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_nutrition_daily_settings": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_personal_record": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_power_zones": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_power_zones_for_sport": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_pregnancy_summary": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_primary_training_device": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_progress_summary_between_dates": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_race_predictions": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_respiration_data": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_rhr_daily": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_rhr_day": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_running_tolerance": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_scheduled_workout_by_id": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_scheduled_workouts": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_sleep_daily": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_sleep_data": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_spo2_data": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_stats": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_stats_and_body": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_steps_data": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_stress_data": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_training_four_week_load_balance": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_training_load_activities": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_training_plan_by_id": {
+      "status": "not_exercised"
+    },
+    "get_training_plans": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_training_readiness": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_training_status": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_unit_system": {
+      "status": "success",
+      "type": "str"
+    },
+    "get_user_profile": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_user_summary": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_userprofile_settings": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_weekly_intensity_minutes": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_weekly_steps": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_weekly_stress": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_weigh_ins": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_workout_by_id": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_workouts": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_courses": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_course": {
+      "status": "error"
+    },
+    "get_effective_goals": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_calendar_note": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_calendar_event": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_gear_items": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_gear_usage_types": {
+      "status": "success",
+      "type": "list"
+    },
+    "get_gear_item": {
+      "status": "success",
+      "type": "dict"
+    },
+    "get_gear_default_choices": {
+      "status": "success",
+      "type": "list"
+    }
+  }
+}

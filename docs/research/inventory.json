@@ -1,0 +1,2451 @@
+{
+  "as_of": "2026-10-02",
+  "purpose": "Engineering checklist under the user-approved four-category policy; not an executable permission policy",
+  "evidence_scope": "Public methods declared on Garmin class in garminconnect 0.3.17, plus explicitly labeled discovery candidates; not exhaustive Garmin platform coverage",
+  "counts": {
+    "Recorded read": 36,
+    "Read candidate": 13,
+    "Write candidate": 11,
+    "Prohibited write": 21,
+    "Discovery candidate": 41,
+    "Operational": 5
+  },
+  "rows": [
+    {
+      "id": "R01",
+      "kind": "Recorded read",
+      "item": "Activity list and totals",
+      "operation": "Read",
+      "methods": [
+        "count_activities",
+        "get_activities",
+        "get_activities_fordate",
+        "get_last_activity",
+        "get_activities_by_date"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "List, filter, count; preserve complete pagination.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2586",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2596",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2635",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2718",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2891"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R02",
+      "kind": "Recorded read",
+      "item": "Activity summary and detailed tracks/charts",
+      "operation": "Read",
+      "methods": [
+        "get_activity",
+        "get_activity_details"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "Chart and polyline defaults are not a promise of full-resolution data.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3370",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3378"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R03",
+      "kind": "Recorded read",
+      "item": "Activity laps and splits",
+      "operation": "Read",
+      "methods": [
+        "get_activity_splits",
+        "get_activity_typed_splits",
+        "get_activity_split_summaries"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3294",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3302",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3312"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R04",
+      "kind": "Recorded read",
+      "item": "Activity weather",
+      "operation": "Read",
+      "methods": [
+        "get_activity_weather"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3320"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R05",
+      "kind": "Recorded read",
+      "item": "Recorded heart-rate and power time in zones",
+      "operation": "Read",
+      "methods": [
+        "get_activity_hr_in_timezones",
+        "get_activity_power_in_timezones"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "Historical analysis, separate from current zone settings.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3328",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3336"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R06",
+      "kind": "Recorded read",
+      "item": "Recorded strength exercise sets",
+      "operation": "Read",
+      "methods": [
+        "get_activity_exercise_sets"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3391"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R07",
+      "kind": "Recorded read",
+      "item": "Activity-to-gear associations",
+      "operation": "Read",
+      "methods": [
+        "get_activity_gear",
+        "get_gear_activities"
+      ],
+      "evidence": "Installed dev.27 read all 55 existing activity gear associations; installed dev.28 gear activity empty page verified.",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "Explicit start/limit without silent clamp. Populated gear-linked pagination unverified; historical associations immutable.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3417",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3428"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "partially_live_verified"
+    },
+    {
+      "id": "R08",
+      "kind": "Recorded read",
+      "item": "Activity file exports",
+      "operation": "Read / export",
+      "methods": [
+        "download_activity"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "Source offers original, TCX, GPX, KML and CSV formats; per-activity availability untested.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3260"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R09",
+      "kind": "Recorded read",
+      "item": "Daily summary and combined body summary",
+      "operation": "Read",
+      "methods": [
+        "get_stats",
+        "get_user_summary",
+        "get_stats_and_body"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1146",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1154",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1372"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R10",
+      "kind": "Recorded read",
+      "item": "Steps, floors and intensity minutes",
+      "operation": "Read",
+      "methods": [
+        "get_steps_data",
+        "get_floors",
+        "get_daily_steps",
+        "get_weekly_steps",
+        "get_intensity_minutes_data",
+        "get_weekly_intensity_minutes"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1181",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1198",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1213",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1271",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1970",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1316"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R11",
+      "kind": "Recorded read",
+      "item": "Calories",
+      "operation": "Read",
+      "methods": [
+        "get_calories_daily"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2225"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R12",
+      "kind": "Recorded read",
+      "item": "Heart rate and resting heart rate",
+      "operation": "Read",
+      "methods": [
+        "get_heart_rates",
+        "get_rhr_day",
+        "get_rhr_daily"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "Daily maxHeartRate is a recorded measurement, not the configured max HR.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1341",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2186",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2199"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R13",
+      "kind": "Recorded read",
+      "item": "Sleep",
+      "operation": "Read",
+      "methods": [
+        "get_sleep_data",
+        "get_sleep_daily"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2116",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2132"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R14",
+      "kind": "Recorded read",
+      "item": "Stress",
+      "operation": "Read",
+      "methods": [
+        "get_stress_data",
+        "get_all_day_stress",
+        "get_weekly_stress"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2170",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1978",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1295"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R15",
+      "kind": "Recorded read",
+      "item": "Body Battery and events",
+      "operation": "Read",
+      "methods": [
+        "get_body_battery",
+        "get_body_battery_events"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1577",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1594"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R16",
+      "kind": "Recorded read",
+      "item": "Respiration and oxygen saturation",
+      "operation": "Read",
+      "methods": [
+        "get_respiration_data",
+        "get_spo2_data"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1944",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1952"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R17",
+      "kind": "Recorded read",
+      "item": "HRV",
+      "operation": "Read",
+      "methods": [
+        "get_hrv_data",
+        "get_hrv_data_range"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2269",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2277"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R18",
+      "kind": "Recorded read",
+      "item": "Daily events and lifestyle logs",
+      "operation": "Read",
+      "methods": [
+        "get_all_day_events",
+        "get_lifestyle_logging_data"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "These are wellness observations, not editable workout plans.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1986",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2178"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R19",
+      "kind": "Recorded read",
+      "item": "Weight and body composition",
+      "operation": "Read",
+      "methods": [
+        "get_body_composition",
+        "get_weigh_ins",
+        "get_daily_weigh_ins"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1383",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1522",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1532"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R20",
+      "kind": "Recorded read",
+      "item": "Blood pressure",
+      "operation": "Read",
+      "methods": [
+        "get_blood_pressure"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1644"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R21",
+      "kind": "Recorded read",
+      "item": "Hydration logs",
+      "operation": "Read",
+      "methods": [
+        "get_hydration_data"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1936"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R22",
+      "kind": "Recorded read",
+      "item": "Nutrition food logs and meals",
+      "operation": "Read",
+      "methods": [
+        "get_nutrition_daily_food_log",
+        "get_nutrition_daily_meals"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "Account entitlements and data availability untested.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L4383",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L4390"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R23",
+      "kind": "Recorded read",
+      "item": "Menstrual logs, calendar and reports",
+      "operation": "Read",
+      "methods": [
+        "get_menstrual_data_for_date",
+        "get_menstrual_calendar_data",
+        "get_menstrual_last_confirmed",
+        "get_menstrual_cycle_summary",
+        "get_menstrual_reports"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "The menstrual calendar includes recorded health data, not workout scheduling.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3937",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3945",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3962",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3969",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3976"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R24",
+      "kind": "Recorded read",
+      "item": "Pregnancy summary",
+      "operation": "Read",
+      "methods": [
+        "get_pregnancy_summary"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L4021"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R25",
+      "kind": "Recorded read",
+      "item": "Health Snapshot export",
+      "operation": "Read / export",
+      "methods": [
+        "download_health_snapshot"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3285"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R26",
+      "kind": "Recorded read",
+      "item": "VO2/max metrics and trends",
+      "operation": "Read",
+      "methods": [
+        "get_max_metrics",
+        "get_max_metrics_range"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1675",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1683"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R27",
+      "kind": "Recorded read",
+      "item": "Lactate-threshold measurements",
+      "operation": "Read",
+      "methods": [
+        "get_lactate_threshold"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "Observed threshold HR/speed/power, not evidence of an editable FTHR setting.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1741"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R28",
+      "kind": "Recorded read",
+      "item": "FTP measurements and trends",
+      "operation": "Read",
+      "methods": [
+        "get_cycling_ftp",
+        "get_functional_threshold_power_range"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "Separate from configured power zones.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3344",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1696"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R29",
+      "kind": "Recorded read",
+      "item": "Training readiness, status and load",
+      "operation": "Read",
+      "methods": [
+        "get_training_readiness",
+        "get_morning_training_readiness",
+        "get_training_status",
+        "get_daily_training_status",
+        "get_training_four_week_load_balance",
+        "get_training_load_activities"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2290",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2298",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2478",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2356",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2345",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2980"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R30",
+      "kind": "Recorded read",
+      "item": "Endurance, hill score, running tolerance and fitness age",
+      "operation": "Read",
+      "methods": [
+        "get_endurance_score",
+        "get_hill_score",
+        "get_running_tolerance",
+        "get_fitnessage_data"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2368",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2494",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2394",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2486"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R31",
+      "kind": "Recorded read",
+      "item": "Race predictions and progress summaries",
+      "operation": "Read",
+      "methods": [
+        "get_race_predictions",
+        "get_progress_summary_between_dates"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2429",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2949"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R32",
+      "kind": "Recorded read",
+      "item": "Personal records",
+      "operation": "Read",
+      "methods": [
+        "get_personal_record"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "Accept/reset/delete record operations would alter recorded achievements; not exposed by inspected class.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1996"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R33",
+      "kind": "Read candidate",
+      "item": "Badges and challenges",
+      "operation": "Read",
+      "methods": [
+        "get_earned_badges",
+        "get_available_badges",
+        "get_in_progress_badges",
+        "get_adhoc_challenges",
+        "get_badge_challenges",
+        "get_available_badge_challenges",
+        "get_non_completed_badge_challenges",
+        "get_inprogress_virtual_challenges"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "Earned results remain immutable; joining a challenge would be a separate action.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2017",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2024",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2031",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2062",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2072",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2082",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2092",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2104"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R34",
+      "kind": "Read candidate",
+      "item": "Goals",
+      "operation": "Read",
+      "methods": [
+        "get_goals"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "Reading includes goals by status; writes require separate decisions.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3025"
+      ],
+      "category": "personal_settings",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R35",
+      "kind": "Read candidate",
+      "item": "Profile and general settings",
+      "operation": "Read",
+      "methods": [
+        "get_full_name",
+        "get_unit_system",
+        "get_user_profile",
+        "get_userprofile_settings"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "Field-level review required; this is not approval for all profile fields.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1138",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1142",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3515",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3522"
+      ],
+      "category": "personal_settings",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R36",
+      "kind": "Read candidate",
+      "item": "Configured heart-rate zones",
+      "operation": "Read",
+      "methods": [
+        "get_heart_rate_zones"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "Verify per-sport/device field structure before interpreting max HR, resting HR, or FTHR.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3352"
+      ],
+      "category": "personal_settings",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R37",
+      "kind": "Read candidate",
+      "item": "Configured power zones",
+      "operation": "Read",
+      "methods": [
+        "get_power_zones",
+        "get_power_zones_for_sport"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3357",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3363"
+      ],
+      "category": "personal_settings",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R38",
+      "kind": "Read candidate",
+      "item": "Nutrition settings",
+      "operation": "Read",
+      "methods": [
+        "get_nutrition_daily_settings"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "Separate from food logs.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L4397"
+      ],
+      "category": "personal_settings",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R39",
+      "kind": "Read candidate",
+      "item": "Workout templates and FIT export",
+      "operation": "Read / export",
+      "methods": [
+        "get_workouts",
+        "get_workout_by_id",
+        "download_workout"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "Templates are distinct from completed activities.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3539",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3548",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3561"
+      ],
+      "category": "training_plans",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R40",
+      "kind": "Read candidate",
+      "item": "Scheduled workout calendar",
+      "operation": "Read",
+      "methods": [
+        "get_scheduled_workouts",
+        "get_scheduled_workout_by_id",
+        "get_next_scheduled_workout"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "Upstream next-workout helper searches only current/next month and documents incomplete adaptive-plan visibility.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3847",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3866",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3877"
+      ],
+      "category": "training_plans",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R41",
+      "kind": "Read candidate",
+      "item": "Training plans and adaptive plans",
+      "operation": "Read",
+      "methods": [
+        "get_training_plans",
+        "get_training_plan_by_id",
+        "get_adaptive_training_plan_by_id"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "Plan details do not establish full Coach/adaptive calendar coverage.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L4361",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L4367",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L4375"
+      ],
+      "category": "training_plans",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R42",
+      "kind": "Read candidate",
+      "item": "Device list, primary and last-used device",
+      "operation": "Read",
+      "methods": [
+        "get_devices",
+        "get_primary_training_device",
+        "get_device_last_used"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2520",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2535",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2579"
+      ],
+      "category": "device_actions",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R43",
+      "kind": "Read candidate",
+      "item": "Device settings and alarms",
+      "operation": "Read",
+      "methods": [
+        "get_device_settings",
+        "get_device_alarms"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "No named setters in inspected class.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2527",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2566"
+      ],
+      "category": "personal_settings",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R44",
+      "kind": "Recorded read",
+      "item": "Device solar observations",
+      "operation": "Read",
+      "methods": [
+        "get_device_solar_data"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2544"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R45",
+      "kind": "Read candidate",
+      "item": "Gear definitions and defaults",
+      "operation": "Read",
+      "methods": [
+        "get_gear",
+        "get_gear_defaults"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "Separate from associations on logged activities.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3078",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3214"
+      ],
+      "category": "personal_settings",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R46",
+      "kind": "Recorded read",
+      "item": "Gear usage statistics",
+      "operation": "Read",
+      "methods": [
+        "get_gear_stats"
+      ],
+      "evidence": "Installed dev.28 MCP real unused-gear statistics verified.",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "Zero totals and returned UUID verified; used-gear statistics shapes remain unverified. Missing resource errors are preserved.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3196"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "partially_live_verified"
+    },
+    {
+      "id": "R47",
+      "kind": "Recorded read",
+      "item": "Golf scorecards and shots",
+      "operation": "Read",
+      "methods": [
+        "get_golf_summary",
+        "get_golf_scorecard",
+        "get_golf_shot_data"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L4404",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L4424",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L4443"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R48",
+      "kind": "Recorded read",
+      "item": "Golf club and player statistics",
+      "operation": "Read",
+      "methods": [
+        "get_golf_club_stats",
+        "get_golf_user_stats"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L4490",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L4509"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "R49",
+      "kind": "Read candidate",
+      "item": "Activity type catalog",
+      "operation": "Read",
+      "methods": [
+        "get_activity_types"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "Reference taxonomy, not logged activity editing.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3020"
+      ],
+      "category": "past_facts",
+      "permission": "allowed_read",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "W01",
+      "kind": "Write candidate",
+      "item": "Workout template",
+      "operation": "Create",
+      "methods": [
+        "upload_workout",
+        "upload_running_workout",
+        "upload_cycling_workout",
+        "upload_swimming_workout",
+        "upload_walking_workout",
+        "upload_hiking_workout",
+        "upload_strength_workout"
+      ],
+      "evidence": "Source",
+      "live_verified": true,
+      "decision": "Allowed: write without history changes",
+      "note": "Generic JSON plus six typed sport helpers. Creation is separate from calendar scheduling.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3569",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3618",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3656",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3694",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3716",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3738",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3760"
+      ],
+      "category": "training_plans",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "international_mcp_verified",
+      "live_evidence": "LIVE_VERIFICATION.md"
+    },
+    {
+      "id": "W02",
+      "kind": "Write candidate",
+      "item": "Workout template",
+      "operation": "Update / replace",
+      "methods": [
+        "update_workout"
+      ],
+      "evidence": "Source",
+      "live_verified": true,
+      "decision": "Allowed: write without history changes",
+      "note": "Whole-object PUT; preserves ID. Read full object before modifying; verify effects on scheduled references.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3589"
+      ],
+      "category": "training_plans",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "international_mcp_verified",
+      "live_evidence": "LIVE_VERIFICATION.md"
+    },
+    {
+      "id": "W03",
+      "kind": "Write candidate",
+      "item": "Workout template",
+      "operation": "Delete",
+      "methods": [
+        "delete_workout"
+      ],
+      "evidence": "Source",
+      "live_verified": true,
+      "decision": "Allowed: write without history changes",
+      "note": "Check impact on scheduled references before any approved use.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3554"
+      ],
+      "category": "training_plans",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "international_mcp_verified",
+      "live_evidence": "LIVE_VERIFICATION.md"
+    },
+    {
+      "id": "W04",
+      "kind": "Write candidate",
+      "item": "Workout calendar entry",
+      "operation": "Schedule",
+      "methods": [
+        "schedule_workout"
+      ],
+      "evidence": "Source",
+      "live_verified": true,
+      "decision": "Allowed: write without history changes",
+      "note": "POST using template ID and date.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3913"
+      ],
+      "category": "training_plans",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "international_mcp_verified",
+      "live_evidence": "LIVE_VERIFICATION.md"
+    },
+    {
+      "id": "W05",
+      "kind": "Write candidate",
+      "item": "Workout calendar entry",
+      "operation": "Unschedule",
+      "methods": [
+        "unschedule_workout"
+      ],
+      "evidence": "Source",
+      "live_verified": true,
+      "decision": "Allowed: write without history changes",
+      "note": "DELETE using scheduled-instance ID, not template ID.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3928"
+      ],
+      "category": "training_plans",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "international_mcp_verified",
+      "live_evidence": "LIVE_VERIFICATION.md"
+    },
+    {
+      "id": "W06",
+      "kind": "Write candidate",
+      "item": "Workout calendar entry",
+      "operation": "Reschedule",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": true,
+      "decision": "Allowed: write without history changes",
+      "note": "No named move operation in inspected class. Schedule plus unschedule is a composite candidate, not a verified atomic move.",
+      "source_links": [],
+      "category": "training_plans",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "international_mcp_verified",
+      "live_evidence": "LIVE_VERIFICATION.md"
+    },
+    {
+      "id": "W07",
+      "kind": "Write candidate",
+      "item": "Workout delivery",
+      "operation": "Send to device",
+      "methods": [
+        "push_workout_to_device"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Separate authorization: device action",
+      "note": "Source defaults to last-used device and first listed workout if IDs omitted; device action authorization must identify its intended targets. Server acceptance does not prove watch receipt.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3802"
+      ],
+      "category": "device_actions",
+      "permission": "separate_authorization",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "W08",
+      "kind": "Write candidate",
+      "item": "Gear definition",
+      "operation": "Create",
+      "methods": [
+        "create_gear"
+      ],
+      "evidence": "Installed dev.23 MCP unused independent gear create/read/rename/delete passed.",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "No recorded usage, default activities, images or collections. Other gear contracts remain unverified; historical activity associations remain immutable.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3088"
+      ],
+      "category": "personal_settings",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "partially_live_verified"
+    },
+    {
+      "id": "W09",
+      "kind": "Write candidate",
+      "item": "Gear defaults",
+      "operation": "Set default",
+      "methods": [
+        "set_gear_default"
+      ],
+      "evidence": "Installed dev.27 MCP set/read/clear defaults passed; all 55 historical activity gear associations unchanged.",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Unused active independent gear, non-conflicting defaultGear=true/preferredGear=false. Original inventory and defaults restored. Conflicts, preferred gear and used-gear contracts remain unverified.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3224"
+      ],
+      "category": "personal_settings",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "partially_live_verified"
+    },
+    {
+      "id": "W10",
+      "kind": "Write candidate",
+      "item": "Gear defaults",
+      "operation": "Remove default",
+      "methods": [
+        "set_gear_default"
+      ],
+      "evidence": "Installed dev.27 MCP set/read/clear defaults passed; all 55 historical activity gear associations unchanged.",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Unused active independent gear, non-conflicting defaultGear=true/preferredGear=false. Original inventory and defaults restored. Conflicts, preferred gear and used-gear contracts remain unverified.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3224"
+      ],
+      "category": "personal_settings",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "partially_live_verified"
+    },
+    {
+      "id": "W11",
+      "kind": "Write candidate",
+      "item": "Menstrual tracking configuration",
+      "operation": "Update settings",
+      "methods": [
+        "update_menstrual_settings"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Merges supplied settings with stored settings and PUTs profile subset; logging operations remain prohibited.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L4255"
+      ],
+      "category": "personal_settings",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "B01",
+      "kind": "Prohibited write",
+      "item": "Recorded activity",
+      "operation": "Rename",
+      "methods": [
+        "set_activity_name"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Prohibited: logged data",
+      "note": "Upstream capability listed for completeness, not permission to expose or test it.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2643"
+      ],
+      "category": "past_facts",
+      "permission": "prohibited",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "B02",
+      "kind": "Prohibited write",
+      "item": "Recorded activity",
+      "operation": "Change type",
+      "methods": [
+        "set_activity_type"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Prohibited: logged data",
+      "note": "Upstream capability listed for completeness, not permission to expose or test it.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2651"
+      ],
+      "category": "past_facts",
+      "permission": "prohibited",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "B03",
+      "kind": "Prohibited write",
+      "item": "Recorded activity",
+      "operation": "Edit description",
+      "methods": [
+        "set_activity_description"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Prohibited: logged data",
+      "note": "Upstream capability listed for completeness, not permission to expose or test it.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2671"
+      ],
+      "category": "past_facts",
+      "permission": "prohibited",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "B04",
+      "kind": "Prohibited write",
+      "item": "Recorded activity",
+      "operation": "Create manually",
+      "methods": [
+        "create_manual_activity",
+        "create_manual_activity_from_json"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Prohibited: logged data",
+      "note": "Upstream capability listed for completeness, not permission to expose or test it.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2684",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2679"
+      ],
+      "category": "past_facts",
+      "permission": "prohibited",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "B05",
+      "kind": "Prohibited write",
+      "item": "Recorded activity",
+      "operation": "Upload file",
+      "methods": [
+        "upload_activity"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Prohibited: logged data",
+      "note": "Upstream capability listed for completeness, not permission to expose or test it.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2730"
+      ],
+      "category": "past_facts",
+      "permission": "prohibited",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "B06",
+      "kind": "Prohibited write",
+      "item": "Recorded activity",
+      "operation": "Import file",
+      "methods": [
+        "import_activity"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Prohibited: logged data",
+      "note": "Upstream capability listed for completeness, not permission to expose or test it.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2784"
+      ],
+      "category": "past_facts",
+      "permission": "prohibited",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "B07",
+      "kind": "Prohibited write",
+      "item": "Recorded activity",
+      "operation": "Delete",
+      "methods": [
+        "delete_activity"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Prohibited: logged data",
+      "note": "Upstream capability listed for completeness, not permission to expose or test it.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L2878"
+      ],
+      "category": "past_facts",
+      "permission": "prohibited",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "B08",
+      "kind": "Prohibited write",
+      "item": "Recorded strength activity",
+      "operation": "Replace exercise sets",
+      "methods": [
+        "set_activity_exercise_sets"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Prohibited: logged data",
+      "note": "Upstream capability listed for completeness, not permission to expose or test it.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3399"
+      ],
+      "category": "past_facts",
+      "permission": "prohibited",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "B09",
+      "kind": "Prohibited write",
+      "item": "Recorded activity gear",
+      "operation": "Attach",
+      "methods": [
+        "add_gear_to_activity"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Prohibited: logged data",
+      "note": "Upstream capability listed for completeness, not permission to expose or test it.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3455"
+      ],
+      "category": "past_facts",
+      "permission": "prohibited",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "B10",
+      "kind": "Prohibited write",
+      "item": "Recorded activity gear",
+      "operation": "Detach",
+      "methods": [
+        "remove_gear_from_activity"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Prohibited: logged data",
+      "note": "Upstream capability listed for completeness, not permission to expose or test it.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3486"
+      ],
+      "category": "past_facts",
+      "permission": "prohibited",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "B11",
+      "kind": "Prohibited write",
+      "item": "Body composition log",
+      "operation": "Add",
+      "methods": [
+        "add_body_composition"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Prohibited: logged data",
+      "note": "Upstream capability listed for completeness, not permission to expose or test it.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1404"
+      ],
+      "category": "past_facts",
+      "permission": "prohibited",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "B12",
+      "kind": "Prohibited write",
+      "item": "Weight log",
+      "operation": "Add",
+      "methods": [
+        "add_weigh_in",
+        "add_weigh_in_with_timestamps"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Prohibited: logged data",
+      "note": "Upstream capability listed for completeness, not permission to expose or test it.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1449",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1478"
+      ],
+      "category": "past_facts",
+      "permission": "prohibited",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "B13",
+      "kind": "Prohibited write",
+      "item": "Weight log",
+      "operation": "Delete one",
+      "methods": [
+        "delete_weigh_in"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Prohibited: logged data",
+      "note": "Upstream capability listed for completeness, not permission to expose or test it.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1541"
+      ],
+      "category": "past_facts",
+      "permission": "prohibited",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "B14",
+      "kind": "Prohibited write",
+      "item": "Weight log",
+      "operation": "Delete day entries",
+      "methods": [
+        "delete_weigh_ins"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Prohibited: logged data",
+      "note": "Upstream capability listed for completeness, not permission to expose or test it.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1555"
+      ],
+      "category": "past_facts",
+      "permission": "prohibited",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "B15",
+      "kind": "Prohibited write",
+      "item": "Blood pressure log",
+      "operation": "Add",
+      "methods": [
+        "set_blood_pressure"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Prohibited: logged data",
+      "note": "Upstream capability listed for completeness, not permission to expose or test it.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1605"
+      ],
+      "category": "past_facts",
+      "permission": "prohibited",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "B16",
+      "kind": "Prohibited write",
+      "item": "Blood pressure log",
+      "operation": "Delete",
+      "methods": [
+        "delete_blood_pressure"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Prohibited: logged data",
+      "note": "Upstream capability listed for completeness, not permission to expose or test it.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1661"
+      ],
+      "category": "past_facts",
+      "permission": "prohibited",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "B17",
+      "kind": "Prohibited write",
+      "item": "Hydration log",
+      "operation": "Add / adjust",
+      "methods": [
+        "add_hydration_data"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Prohibited: logged data",
+      "note": "Upstream capability listed for completeness, not permission to expose or test it.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1855"
+      ],
+      "category": "past_facts",
+      "permission": "prohibited",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "B18",
+      "kind": "Prohibited write",
+      "item": "Menstrual daily log",
+      "operation": "Replace",
+      "methods": [
+        "update_menstrual_daily_log"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Prohibited: logged data",
+      "note": "Upstream capability listed for completeness, not permission to expose or test it.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L4028"
+      ],
+      "category": "past_facts",
+      "permission": "prohibited",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "B19",
+      "kind": "Prohibited write",
+      "item": "Menstrual recorded calendar",
+      "operation": "Replace dates",
+      "methods": [
+        "update_menstrual_calendar"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Prohibited: logged data",
+      "note": "Upstream capability listed for completeness, not permission to expose or test it.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L4122"
+      ],
+      "category": "past_facts",
+      "permission": "prohibited",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "B20",
+      "kind": "Prohibited write",
+      "item": "Menstrual history",
+      "operation": "Initialize with confirmed period",
+      "methods": [
+        "init_menstrual_cycle_setup"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Prohibited: logged data",
+      "note": "Upstream capability listed for completeness, not permission to expose or test it.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L4182"
+      ],
+      "category": "past_facts",
+      "permission": "prohibited",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "B21",
+      "kind": "Prohibited write",
+      "item": "Menstrual history",
+      "operation": "Confirm period start",
+      "methods": [
+        "confirm_menstrual_period_start"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Prohibited: logged data",
+      "note": "Upstream capability listed for completeness, not permission to expose or test it.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L4218"
+      ],
+      "category": "past_facts",
+      "permission": "prohibited",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "G01",
+      "kind": "Discovery candidate",
+      "item": "Configured maximum HR",
+      "operation": "Read field",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "Do not confuse daily maxHeartRate with profile or sport-specific max HR. Zone/profile readers exist; exact setting write is unverified.",
+      "source_links": [],
+      "category": "personal_settings",
+      "permission": "allowed_read",
+      "technical_status": "contract_unverified"
+    },
+    {
+      "id": "G02",
+      "kind": "Discovery candidate",
+      "item": "Configured maximum HR",
+      "operation": "update field",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": true,
+      "decision": "Allowed: write without history changes",
+      "note": "Do not confuse daily maxHeartRate with profile or sport-specific max HR. Zone/profile readers exist; exact setting write is unverified.",
+      "source_links": [],
+      "category": "personal_settings",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "international_mcp_verified",
+      "live_evidence": "LIVE_VERIFICATION.md"
+    },
+    {
+      "id": "G03",
+      "kind": "Discovery candidate",
+      "item": "Configured FTHR / LTHR",
+      "operation": "Read field",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "User example. Historical lactate-threshold methods are not a setting setter; establish account/device/sport scope.",
+      "source_links": [],
+      "category": "personal_settings",
+      "permission": "allowed_read",
+      "technical_status": "contract_unverified"
+    },
+    {
+      "id": "G04",
+      "kind": "Discovery candidate",
+      "item": "Configured FTHR / LTHR",
+      "operation": "update field",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "User example. Historical lactate-threshold methods are not a setting setter; establish account/device/sport scope.",
+      "source_links": [],
+      "category": "personal_settings",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "numeric_update_verified_null_clear_unresolved",
+      "live_evidence": "LIVE_VERIFICATION.md"
+    },
+    {
+      "id": "G05",
+      "kind": "Discovery candidate",
+      "item": "Configured resting HR",
+      "operation": "Read field",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "Different from daily measured resting HR.",
+      "source_links": [],
+      "category": "personal_settings",
+      "permission": "allowed_read",
+      "technical_status": "contract_unverified"
+    },
+    {
+      "id": "G06",
+      "kind": "Discovery candidate",
+      "item": "Configured resting HR",
+      "operation": "update field",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Different from daily measured resting HR.",
+      "source_links": [],
+      "category": "personal_settings",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "contract_unverified"
+    },
+    {
+      "id": "G07",
+      "kind": "Discovery candidate",
+      "item": "Heart-rate zones",
+      "operation": "Update boundaries",
+      "methods": [],
+      "evidence": "International installed MCP verified; see LIVE_VERIFICATION.md",
+      "live_verified": true,
+      "decision": "Allowed: write without history changes",
+      "note": "DEFAULT zone1Floor increased by 1 BPM and restored through installed dev.8. Full heart-rate profile and activity-list snapshots unchanged after restoration. Other boundaries retain field-specific verification gaps.",
+      "source_links": [],
+      "category": "personal_settings",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "international_mcp_verified",
+      "live_evidence": "LIVE_VERIFICATION.md"
+    },
+    {
+      "id": "G08",
+      "kind": "Discovery candidate",
+      "item": "Heart-rate zone calculation",
+      "operation": "Change basis",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Separate decision from boundary values, max HR and FTHR.",
+      "source_links": [],
+      "category": "personal_settings",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "contract_unverified"
+    },
+    {
+      "id": "G09",
+      "kind": "Discovery candidate",
+      "item": "Heart-rate automatic detection",
+      "operation": "Enable",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Candidate setting; exact API and side effects unverified.",
+      "source_links": [],
+      "category": "personal_settings",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "contract_unverified"
+    },
+    {
+      "id": "G10",
+      "kind": "Discovery candidate",
+      "item": "Heart-rate automatic detection",
+      "operation": "disable",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Candidate setting; exact API and side effects unverified.",
+      "source_links": [],
+      "category": "personal_settings",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "contract_unverified"
+    },
+    {
+      "id": "G11",
+      "kind": "Discovery candidate",
+      "item": "Configured FTP",
+      "operation": "Read field",
+      "methods": [],
+      "evidence": "International MCP verified; see LIVE_VERIFICATION.md",
+      "live_verified": true,
+      "decision": "Allowed: read",
+      "note": "Current power configuration, distinct from historical FTP. Cycling FTP changes also affect cross-country-ski FTP/zones; linked changes are reported. Exact original profiles restored in tests.",
+      "source_links": [],
+      "category": "personal_settings",
+      "permission": "allowed_read",
+      "technical_status": "international_mcp_verified"
+    },
+    {
+      "id": "G12",
+      "kind": "Discovery candidate",
+      "item": "Configured FTP",
+      "operation": "update field",
+      "methods": [],
+      "evidence": "International MCP verified; see LIVE_VERIFICATION.md",
+      "live_verified": true,
+      "decision": "Allowed: write without history changes",
+      "note": "Current power configuration, distinct from historical FTP. Cycling FTP changes also affect cross-country-ski FTP/zones; linked changes are reported. Exact original profiles restored in tests.",
+      "source_links": [],
+      "category": "personal_settings",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "international_mcp_verified"
+    },
+    {
+      "id": "G13",
+      "kind": "Discovery candidate",
+      "item": "Power zones",
+      "operation": "Update boundaries",
+      "methods": [],
+      "evidence": "International MCP verified; see LIVE_VERIFICATION.md",
+      "live_verified": true,
+      "decision": "Allowed: write without history changes",
+      "note": "Current power configuration, distinct from historical FTP. Cycling FTP changes also affect cross-country-ski FTP/zones; linked changes are reported. Exact original profiles restored in tests.",
+      "source_links": [],
+      "category": "personal_settings",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "international_mcp_verified"
+    },
+    {
+      "id": "G14",
+      "kind": "Discovery candidate",
+      "item": "Power zones",
+      "operation": "basis",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Read methods exist; no named write method in inspected class.",
+      "source_links": [],
+      "category": "personal_settings",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "contract_unverified"
+    },
+    {
+      "id": "G15",
+      "kind": "Discovery candidate",
+      "item": "Profile fields and preferences",
+      "operation": "Update individual fields",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Named unit-setting tool sends only measurementSystem. Installed dev.11 switch/restore, fresh unit reads, full-profile preservation and activity-list comparison passed. Other profile-setting fields remain unverified; no mixed logged-value updates allowed.",
+      "source_links": [],
+      "category": "personal_settings",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "measurement_system_mcp_verified_other_fields_unverified",
+      "verified_fields": [
+        "userData.measurementSystem"
+      ],
+      "live_evidence": "LIVE_VERIFICATION.md"
+    },
+    {
+      "id": "G16",
+      "kind": "Discovery candidate",
+      "item": "Device settings and alarms",
+      "operation": "Create",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Stored settings and alarm configuration fall under personal settings. A command to execute on a device is a separate device action. Verify the exact target and effects.",
+      "source_links": [],
+      "category": "personal_settings",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "contract_unverified"
+    },
+    {
+      "id": "G17",
+      "kind": "Discovery candidate",
+      "item": "Device settings and alarms",
+      "operation": "update",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Stored settings and alarm configuration fall under personal settings. A command to execute on a device is a separate device action. Verify the exact target and effects.",
+      "source_links": [],
+      "category": "personal_settings",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "contract_unverified"
+    },
+    {
+      "id": "G18",
+      "kind": "Discovery candidate",
+      "item": "Device settings and alarms",
+      "operation": "delete",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Stored settings and alarm configuration fall under personal settings. A command to execute on a device is a separate device action. Verify the exact target and effects.",
+      "source_links": [],
+      "category": "personal_settings",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "contract_unverified"
+    },
+    {
+      "id": "G19",
+      "kind": "Discovery candidate",
+      "item": "Goals",
+      "operation": "Create",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Read method exists; no named write methods in inspected class.",
+      "source_links": [],
+      "category": "personal_settings",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "contract_unverified"
+    },
+    {
+      "id": "G20",
+      "kind": "Discovery candidate",
+      "item": "Goals",
+      "operation": "update",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Read method exists; no named write methods in inspected class.",
+      "source_links": [],
+      "category": "personal_settings",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "contract_unverified"
+    },
+    {
+      "id": "G21",
+      "kind": "Discovery candidate",
+      "item": "Goals",
+      "operation": "delete",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Read method exists; no named write methods in inspected class.",
+      "source_links": [],
+      "category": "personal_settings",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "contract_unverified"
+    },
+    {
+      "id": "G22",
+      "kind": "Discovery candidate",
+      "item": "Nutrition settings",
+      "operation": "Update individual settings",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Separate from recorded food/meal changes, which remain prohibited.",
+      "source_links": [],
+      "category": "personal_settings",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "contract_unverified"
+    },
+    {
+      "id": "G23",
+      "kind": "Discovery candidate",
+      "item": "Gear definitions",
+      "operation": "Update",
+      "methods": [],
+      "evidence": "Installed dev.25 MCP unused independent gear create/read/rename, thresholds, retire/reactivate and delete passed.",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Full ACTIVE/RETIRED inventory and activities unchanged. Used gear, defaults, images and collections remain unverified. Historical activity associations remain immutable.",
+      "source_links": [],
+      "category": "personal_settings",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "partially_live_verified"
+    },
+    {
+      "id": "G24",
+      "kind": "Discovery candidate",
+      "item": "Gear definitions",
+      "operation": "retire",
+      "methods": [],
+      "evidence": "Installed dev.25 MCP unused independent gear create/read/rename, thresholds, retire/reactivate and delete passed.",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Full ACTIVE/RETIRED inventory and activities unchanged. Used gear, defaults, images and collections remain unverified. Historical activity associations remain immutable.",
+      "source_links": [],
+      "category": "personal_settings",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "partially_live_verified"
+    },
+    {
+      "id": "G25",
+      "kind": "Discovery candidate",
+      "item": "Gear definitions",
+      "operation": "delete",
+      "methods": [],
+      "evidence": "Installed dev.25 MCP unused independent gear create/read/rename, thresholds, retire/reactivate and delete passed.",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Full ACTIVE/RETIRED inventory and activities unchanged. Used gear, defaults, images and collections remain unverified. Historical activity associations remain immutable.",
+      "source_links": [],
+      "category": "personal_settings",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "partially_live_verified"
+    },
+    {
+      "id": "G26",
+      "kind": "Discovery candidate",
+      "item": "Courses / routes",
+      "operation": "Read",
+      "methods": [
+        "get_courses",
+        "get_course"
+      ],
+      "evidence": "Fixed endpoint source and installed MCP; see LIVE_VERIFICATION.md",
+      "live_verified": true,
+      "decision": "Allowed: read",
+      "note": "Course list MCP returned empty array; populated list/detail observed in authorized prototype. Named detail reader added in dev.12; its deleted-resource 404 verified through installed MCP, populated named detail read still unverified.",
+      "source_links": [
+        "https://github.com/tamcore/garmin-mcp/blob/master/internal/garmin/api/courses.go"
+      ],
+      "category": "training_plans",
+      "permission": "allowed_read",
+      "technical_status": "international_mcp_empty_list_verified",
+      "live_evidence": "LIVE_VERIFICATION.md"
+    },
+    {
+      "id": "G27",
+      "kind": "Discovery candidate",
+      "item": "Courses / routes",
+      "operation": "create",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Garmin official program describes Courses API. No course methods in inspected Garmin class; access route unverified.",
+      "source_links": [],
+      "category": "training_plans",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "contract_unverified",
+      "prototype_evidence": "LIVE_VERIFICATION.md: course creation/read succeeded in isolated prototype; update and API delete failed, cleanup completed through official UI and verified by 404. No MCP write support claimed."
+    },
+    {
+      "id": "G28",
+      "kind": "Discovery candidate",
+      "item": "Courses / routes",
+      "operation": "update",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Garmin official program describes Courses API. No course methods in inspected Garmin class; access route unverified.",
+      "source_links": [],
+      "category": "training_plans",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "contract_unverified",
+      "prototype_evidence": "LIVE_VERIFICATION.md: course creation/read succeeded in isolated prototype; update and API delete failed, cleanup completed through official UI and verified by 404. No MCP write support claimed."
+    },
+    {
+      "id": "G29",
+      "kind": "Discovery candidate",
+      "item": "Courses / routes",
+      "operation": "delete",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Garmin official program describes Courses API. No course methods in inspected Garmin class; access route unverified.",
+      "source_links": [],
+      "category": "training_plans",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "contract_unverified",
+      "prototype_evidence": "LIVE_VERIFICATION.md: course creation/read succeeded in isolated prototype; update and API delete failed, cleanup completed through official UI and verified by 404. No MCP write support claimed."
+    },
+    {
+      "id": "G30",
+      "kind": "Discovery candidate",
+      "item": "Courses / routes",
+      "operation": "send",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": false,
+      "decision": "Separate authorization: device action",
+      "note": "Garmin official program describes Courses API. No course methods in inspected Garmin class; access route unverified.",
+      "source_links": [],
+      "category": "device_actions",
+      "permission": "separate_authorization",
+      "technical_status": "contract_unverified"
+    },
+    {
+      "id": "G31",
+      "kind": "Discovery candidate",
+      "item": "Race/event calendar and notes",
+      "operation": "Read",
+      "methods": [],
+      "evidence": "Installed MCP dev.19 independent notes and dev.21 private independent events roundtrips passed.",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "Future independent planning notes and private events verified; other event variants and training-plan task notes remain unverified. Historical activity annotations remain immutable.",
+      "source_links": [],
+      "category": "training_plans",
+      "permission": "allowed_read",
+      "technical_status": "partially_live_verified"
+    },
+    {
+      "id": "G32",
+      "kind": "Discovery candidate",
+      "item": "Race/event calendar and notes",
+      "operation": "create",
+      "methods": [],
+      "evidence": "Installed MCP dev.19 independent notes and dev.21 private independent events roundtrips passed.",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Future independent planning notes and private events verified; other event variants and training-plan task notes remain unverified. Historical activity annotations remain immutable.",
+      "source_links": [],
+      "category": "training_plans",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "partially_live_verified"
+    },
+    {
+      "id": "G33",
+      "kind": "Discovery candidate",
+      "item": "Race/event calendar and notes",
+      "operation": "update",
+      "methods": [],
+      "evidence": "Installed MCP dev.19 independent notes and dev.21 private independent events roundtrips passed.",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Future independent planning notes and private events verified; other event variants and training-plan task notes remain unverified. Historical activity annotations remain immutable.",
+      "source_links": [],
+      "category": "training_plans",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "partially_live_verified"
+    },
+    {
+      "id": "G34",
+      "kind": "Discovery candidate",
+      "item": "Race/event calendar and notes",
+      "operation": "delete",
+      "methods": [],
+      "evidence": "Installed MCP dev.19 independent notes and dev.21 private independent events roundtrips passed.",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Future independent planning notes and private events verified; other event variants and training-plan task notes remain unverified. Historical activity annotations remain immutable.",
+      "source_links": [],
+      "category": "training_plans",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "partially_live_verified"
+    },
+    {
+      "id": "G35",
+      "kind": "Discovery candidate",
+      "item": "Training plans / Coach enrollment",
+      "operation": "Enroll",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Plan readers exist; no named enrollment or editing methods in inspected class.",
+      "source_links": [],
+      "category": "training_plans",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "contract_unverified"
+    },
+    {
+      "id": "G36",
+      "kind": "Discovery candidate",
+      "item": "Training plans / Coach enrollment",
+      "operation": "change",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Plan readers exist; no named enrollment or editing methods in inspected class.",
+      "source_links": [],
+      "category": "training_plans",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "contract_unverified"
+    },
+    {
+      "id": "G37",
+      "kind": "Discovery candidate",
+      "item": "Training plans / Coach enrollment",
+      "operation": "stop",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Plan readers exist; no named enrollment or editing methods in inspected class.",
+      "source_links": [],
+      "category": "training_plans",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "contract_unverified"
+    },
+    {
+      "id": "G38",
+      "kind": "Discovery candidate",
+      "item": "Challenges",
+      "operation": "Join",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": false,
+      "decision": "Exception: challenge participation is outside the four agreed categories",
+      "note": "Read methods exist; no named action methods in inspected class.",
+      "source_links": [],
+      "category": null,
+      "permission": "category_exception",
+      "technical_status": "contract_unverified"
+    },
+    {
+      "id": "G39",
+      "kind": "Discovery candidate",
+      "item": "Challenges",
+      "operation": "leave",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": false,
+      "decision": "Exception: challenge participation is outside the four agreed categories",
+      "note": "Read methods exist; no named action methods in inspected class.",
+      "source_links": [],
+      "category": null,
+      "permission": "category_exception",
+      "technical_status": "contract_unverified"
+    },
+    {
+      "id": "G40",
+      "kind": "Discovery candidate",
+      "item": "Social connections and privacy",
+      "operation": "Read",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": false,
+      "decision": "Allowed: read",
+      "note": "Discovery candidate, not confirmed support. Sharing recorded activity metadata would violate the historical-write rule.",
+      "source_links": [],
+      "category": "personal_settings",
+      "permission": "allowed_read",
+      "technical_status": "contract_unverified"
+    },
+    {
+      "id": "G41",
+      "kind": "Discovery candidate",
+      "item": "Social connections and privacy",
+      "operation": "change settings",
+      "methods": [],
+      "evidence": "Contract unverified",
+      "live_verified": false,
+      "decision": "Allowed: write without history changes",
+      "note": "Privacy preferences fall under personal settings only if history is unchanged. Friend/follow/invite/message actions are not included in this row or authorized by the four-category policy.",
+      "source_links": [],
+      "category": "personal_settings",
+      "permission": "allowed_write_no_history_changes",
+      "technical_status": "contract_unverified"
+    },
+    {
+      "id": "O01",
+      "kind": "Operational",
+      "item": "Authentication",
+      "operation": "Login / MFA continuation",
+      "methods": [
+        "login",
+        "resume_login"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Internal mechanism; not a data permission decision",
+      "note": "Authentication infrastructure, not a Garmin data-write grant.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L846",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L1098"
+      ],
+      "category": null,
+      "permission": "internal",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "O02",
+      "kind": "Operational",
+      "item": "Session",
+      "operation": "Logout / clear cached tokens",
+      "methods": [
+        "logout"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Internal mechanism; not a data permission decision",
+      "note": "Local session effects; confirmation behavior and storage location undecided.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L4325"
+      ],
+      "category": null,
+      "permission": "internal",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "O03",
+      "kind": "Operational",
+      "item": "Archived data restoration",
+      "operation": "Request reload",
+      "methods": [
+        "request_reload"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Technical check: establish no history mutation",
+      "note": "POST requests old data restoration. Not automatically classified as read-only merely because its purpose is reading; verify effects.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L3529"
+      ],
+      "category": null,
+      "permission": "verify_no_history_changes",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "O04",
+      "kind": "Operational",
+      "item": "Generic API and download access",
+      "operation": "Arbitrary requests",
+      "methods": [
+        "connectapi",
+        "connectwebproxy",
+        "download",
+        "query_garmin_graphql"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Internal only; cannot bypass category permissions",
+      "note": "AI proposal: keep internal only. Arbitrary GraphQL documents or method/path dispatch can bypass named-operation restrictions.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L832",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L837",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L842",
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L4299"
+      ],
+      "category": null,
+      "permission": "internal_no_bypass",
+      "technical_status": "source_only_not_live_verified"
+    },
+    {
+      "id": "O05",
+      "kind": "Operational",
+      "item": "Typed model namespace",
+      "operation": "Wrap supported methods",
+      "methods": [
+        "typed"
+      ],
+      "evidence": "Source",
+      "live_verified": false,
+      "decision": "Internal mechanism; not a data permission decision",
+      "note": "Internal helper, not an additional Garmin data category.",
+      "source_links": [
+        "https://github.com/cyberjunky/python-garminconnect/blob/218e72ca5459e014435fc2d94fd18bd601fa0c14/garminconnect/__init__.py#L808"
+      ],
+      "category": null,
+      "permission": "internal",
+      "technical_status": "source_only_not_live_verified"
+    }
+  ],
+  "policy": {
+    "approved_on": "2026-10-02",
+    "reads": "allowed across categories",
+    "categories": {
+      "past_facts": "read only; no logged-data mutation",
+      "training_plans": "read/write including create, update, delete and schedule",
+      "personal_settings": "read/write without changing history",
+      "device_actions": "reads allowed; actions require separate authorization"
+    },
+    "precedence": "No logged-data mutation overrides every allowed write. Technical verification and permission are independent."
+  }
+}
