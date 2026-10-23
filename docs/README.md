@@ -19,4 +19,4 @@ Transbridge 是项目与 marketplace，Garminops 是 Garmin 插件及同名 skil
 
 公开文档保留使用说明、判断方法、契约与能力边界。真实验证流水、个人响应摘要、覆盖报告、会话交接及安装调试记录保存在开发根目录被忽略的 `logs/`，不跟踪、不随发布包分发；新的使用者不能依赖这些本机文件。
 
-开发规则见根目录 `AGENTS.md`；技能说明见 [Garminops](../garminops/skills/garminops/SKILL.md)。协议测试、真实业务、宿主发现和当前聊天验收是不同证据，不能相互替代。原 Git 历史仍保留，不因日志迁移而视为已适合公开。
+开发规则见根目录 `AGENTS.md`；技能说明见 [Garminops](../garminops/skills/garminops/SKILL.md)。协议测试、真实业务、宿主发现和当前聊天验收是不同证据，不能相互替代。公开分支已采用清理后的初始历史；旧开发历史的备份仅保留在本地，不随公开分支或插件分发。

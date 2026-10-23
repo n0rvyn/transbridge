@@ -14,10 +14,10 @@ Codex/ChatGPT 桌面本地插件 marketplace。
 
 Intel macOS 安装当前锁定的 `cryptography 50.0.2` 需要源码构建：先准备 Rust ≥1.83、Xcode 命令行工具和 OpenSSL 3；必要时按 [cryptography 官方安装说明](https://cryptography.io/en/latest/installation/) 设置 `OPENSSL_DIR`。锁文件没有该版本的 Intel macOS wheel，缺少工具链时不能把安装失败当作账号或 Garmin 服务错误。其它系统可能使用 wheel，其宿主兼容性仍需分别验证。
 
-仓库目前为私有，克隆需要已有的 GitHub 访问权限。在终端执行：
+在终端克隆公开仓库并安装：
 
 ```sh
-git clone git@github.com:n0rvyn/transbridge.git
+git clone https://github.com/n0rvyn/transbridge.git
 cd transbridge
 python3 scripts/package_garmin.py
 codex plugin marketplace add .
